@@ -3,7 +3,10 @@ import { AnyAction, configureStore, ThunkDispatch } from '@reduxjs/toolkit';
 import { reducer, RootState } from './reducers';
 
 const makeStore: MakeStore<RootState> = (context: Context) =>
-  configureStore({ reducer: reducer });
+  configureStore({
+    reducer: reducer,
+    devTools: process.env.NODE_ENV === 'development',
+  });
 
 // export an assembled wrapper
 export const wrapper = createWrapper<RootState>(makeStore, { debug: false });
