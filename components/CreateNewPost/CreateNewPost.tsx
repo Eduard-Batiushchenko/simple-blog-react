@@ -24,7 +24,7 @@ const Label = styled.label`
   color: #3268a1;
 `;
 
-const Input = styled.textarea`
+const Texterea = styled.textarea`
   width: 100%;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -60,6 +60,7 @@ const Button = styled.button`
     color: #3268a1;
   }
 `;
+// JSX-markup
 
 const CreateNewPost: React.FC = () => {
   const initialState = {
@@ -77,9 +78,9 @@ const CreateNewPost: React.FC = () => {
     setForm(state => ({ ...state, [currentInput]: value }));
   };
 
-  const handleSubmitInput = (e: React.FormEvent): void => {
+  const handleSubmitInput = async (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(postNewBlogOperator(form));
+    await dispatch(postNewBlogOperator(form));
     setForm(initialState);
     router.push(routes.home);
   };
@@ -88,7 +89,7 @@ const CreateNewPost: React.FC = () => {
       <Form onSubmit={handleSubmitInput}>
         <Label>
           Title text
-          <Input
+          <Texterea
             name="title"
             value={form.title}
             onChange={handleInput}
@@ -98,7 +99,7 @@ const CreateNewPost: React.FC = () => {
         </Label>
         <Label>
           Body text
-          <Input
+          <Texterea
             name="body"
             value={form.body}
             onChange={handleInput}

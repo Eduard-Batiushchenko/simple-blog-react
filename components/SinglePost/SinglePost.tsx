@@ -26,6 +26,8 @@ const Text = styled.p`
   margin-bottom: 0;
 `;
 
+// JSX-markup
+
 const SinglePost: React.FC<TPost> = ({ post }) => {
   return (
     <Container>

@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Container from '../Container';
 
+// Styled-components
+
 const Title = styled.h2`
   display: flex;
   justify-content: center;
@@ -19,7 +21,9 @@ const Footer = styled.footer`
   background-color: #c0c0c0;
 `;
 
-const FooterApp = () => {
+// JSX-markup
+
+const FooterApp: React.FC = () => {
   return (
     <Footer>
       <Container>
