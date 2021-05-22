@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { combineReducers } from 'redux';
 import { HYDRATE } from 'next-redux-wrapper';
 import posts from './postsReducer';

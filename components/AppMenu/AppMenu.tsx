@@ -58,7 +58,7 @@ const Button = styled.a`
 
 // JSX-Component
 
-const AppMenu = () => {
+const AppMenu: React.FC = () => {
   return (
     <Header>
       <Container>

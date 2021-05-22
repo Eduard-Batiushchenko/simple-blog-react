@@ -88,7 +88,7 @@ const CreateNewPost: React.FC = () => {
     setForm(state => ({ ...state, [currentInput]: value }));
   };
 
-  const handleSubmitInput = async (e: React.FormEvent) => {
+  const handleSubmitInput = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
     await dispatch(postNewBlogOperator(form));
     setForm(initialState);

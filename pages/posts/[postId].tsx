@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import MainLayout from '../../layouts';
 import SinglePost from '../../components/SinglePost/SinglePost';
 import { getCurrentPost } from '../../redux/selectors/posts-selectors';
@@ -5,6 +6,8 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { wrapper, NextThunkDispatch } from '../../redux/store';
 import { handleSinglePostOperator } from '../../redux/operators/postsOperations';
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export default function Post() {
   const post = useTypedSelector(getCurrentPost);
   return (
@@ -17,6 +20,7 @@ export default function Post() {
 export const getServerSideProps = wrapper.getServerSideProps(
   async ({ store, params }) => {
     const dispatch = store.dispatch as NextThunkDispatch;
-    await dispatch(await handleSinglePostOperator(params.postId));
+    const id: string = params.potId as string;
+    await dispatch(await handleSinglePostOperator(id));
   },
 );

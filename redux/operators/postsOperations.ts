@@ -5,10 +5,12 @@ import {
   HandlePostsActions,
   HandlePostActions,
   postBlogActions,
+  IPost,
 } from '../../types/post';
 
 const handleAllPostsOperator =
-  () => async (dispatch: Dispatch<HandlePostsActions>) => {
+  () =>
+  async (dispatch: Dispatch<HandlePostsActions>): Promise<void> => {
     try {
       dispatch(actions.handlePostsRequest());
       const response = await api.handlePosts();
@@ -21,7 +23,8 @@ const handleAllPostsOperator =
   };
 
 const handleSinglePostOperator =
-  querry => async (dispatch: Dispatch<HandlePostActions>) => {
+  (querry: string) =>
+  async (dispatch: Dispatch<HandlePostActions>): Promise<void> => {
     try {
       dispatch(actions.handlePostRequest());
       const response = await api.handlePost(querry);
@@ -33,7 +36,8 @@ const handleSinglePostOperator =
   };
 
 const postNewBlogOperator =
-  body => async (dispatch: Dispatch<postBlogActions>) => {
+  (body: IPost) =>
+  async (dispatch: Dispatch<postBlogActions>): Promise<void> => {
     try {
       dispatch(actions.postBlogRequest());
       const response = await api.postBlog(body);
