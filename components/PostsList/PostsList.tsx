@@ -7,7 +7,7 @@ import Container from '../Container';
 
 // Styled-components
 
-const Title = styled.h2`
+const Title = styled.h1`
   font-weight: 700;
   font-size: 24px;
   line-height: 1.2;

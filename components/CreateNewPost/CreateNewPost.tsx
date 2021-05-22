@@ -60,6 +60,16 @@ const Button = styled.button`
     color: #3268a1;
   }
 `;
+const Title = styled.h1`
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #3268a1;
+`;
 // JSX-markup
 
 const CreateNewPost: React.FC = () => {
@@ -86,6 +96,7 @@ const CreateNewPost: React.FC = () => {
   };
   return (
     <Container>
+      <Title>Create Post Form</Title>
       <Form onSubmit={handleSubmitInput}>
         <Label>
           Title text

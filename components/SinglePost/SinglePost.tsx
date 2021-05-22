@@ -9,7 +9,7 @@ const Article = styled.article`
   margin-bottom: 100px;
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
   text-align: center;
   font-weight: 700;
   font-size: 24px;
