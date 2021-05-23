@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { postSuccessMessage, postErrorMessage } from '../../pnotify/pnotify';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { postNewBlogOperator } from '../../redux/operators/postsOperations';
@@ -93,11 +92,10 @@ const CreateNewPost: React.FC = () => {
     e.preventDefault();
     try {
       await dispatch(postNewBlogOperator(form));
-      postSuccessMessage('Post successfully created');
       setForm(initialState);
       router.push(routes.home);
     } catch (error) {
-      postErrorMessage('Ooops, something went wrong, please try again');
+      alert('Oops... something went wrong');
     }
   };
   return (
