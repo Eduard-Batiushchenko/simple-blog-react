@@ -9,7 +9,8 @@
     "lint": "eslint --ext js,jsx,ts,tsx --fix",
     "start": "next start",
     "predeploy": "npm run build",
-    "deploy": "netlify deploy -p"
+    "deploy": "netlify deploy -p",
+    "export": "next export"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
