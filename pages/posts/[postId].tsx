@@ -20,7 +20,7 @@ export default function Post() {
 export const getServerSideProps = wrapper.getServerSideProps(
   async ({ store, params }) => {
     const dispatch = store.dispatch as NextThunkDispatch;
-    const id: string = params.potId as string;
+    const id: string = params.postId as string;
     await dispatch(await handleSinglePostOperator(id));
   },
 );
